@@ -463,3 +463,33 @@ button:hover,
 .button.button-slack:hover,
 .button.button-slack:focus {
   filter: brightness(90%) }
+
+/* WeChat */
+.button.button-wechat {
+  color: #ffffff;
+  background-color: #2db842;
+}
+.button.button-wechat:hover,
+.button.button-wechat:focus {
+  filter: brightness(90%);
+}
+
+/* Venmo */
+.button.button-venmo {
+  color: #ffffff;
+  background-color: #1ab7ea;
+}
+.button.button-venmo:hover,
+.button.button-venmo:focus {
+  filter: brightness(90%);
+}
+
+/* ApplePay */
+.button.button-applepay {
+  color: #ffffff;
+  background-color: #000000;
+}
+.button.button-applepay:hover,
+.button.button-applepay:focus {
+  filter: brightness(90%);
+}
