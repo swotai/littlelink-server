@@ -903,7 +903,16 @@ function Home(props) {
                   />
                 )
               }
-            </Sort >
+              {runtimeConfig.APPLEPAY && (
+                <Button
+                  name="applepay"
+                  href={runtimeConfig.APPLEPAY}
+                  displayName="Apple Pay"
+                  logo={applepayLogo}
+                  order={buttonOrder('APPLEPAY')}
+                />
+              )}
+            </Sort>
             <div>
               <p className="footer">
                 {runtimeConfig.FOOTER}
