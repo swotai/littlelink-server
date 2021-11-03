@@ -451,7 +451,7 @@ function Home(props) {
                   name="applepay"
                   href={runtimeConfig.APPLEPAY}
                   displayName="Apple Pay"
-                  logo={applePayLogo}
+                  logo={applepayLogo}
                   order={buttonOrder('APPLEPAY')}
                 />
               )}
