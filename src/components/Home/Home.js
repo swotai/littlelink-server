@@ -42,6 +42,10 @@ import devtoLogo from '../../icons/devto.svg';
 import Sort from '../Sort/Sort';
 import paypalLogo from '../../icons/paypal.svg';
 import slackLogo from '../../icons/slack.svg';
+import wechatLogo from '../../icons/wechat.svg';
+import venmoLogo from '../../icons/venmo.svg';
+import applepayLogo from '../../icons/applepay.svg';
+
 
 function Home(props) {
   let order = [];
@@ -422,6 +426,33 @@ function Home(props) {
                   displayName="Slack"
                   logo={slackLogo}
                   order={buttonOrder('SLACK')}
+                />
+              )}
+              {runtimeConfig.WECHAT && (
+                <Button
+                  name="wechat"
+                  href={runtimeConfig.WECHAT}
+                  displayName="WeChat"
+                  logo={wechatLogo}
+                  order={buttonOrder('WECHAT')}
+                />
+              )}
+              {runtimeConfig.VENMO && (
+                <Button
+                  name="venmo"
+                  href={runtimeConfig.VENMO}
+                  displayName="Venmo"
+                  logo={venmoLogo}
+                  order={buttonOrder('VENMO')}
+                />
+              )}
+              {runtimeConfig.APPLEPAY && (
+                <Button
+                  name="applepay"
+                  href={runtimeConfig.APPLEPAY}
+                  displayName="Apple Pay"
+                  logo={applePayLogo}
+                  order={buttonOrder('APPLEPAY')}
                 />
               )}
             </Sort>
