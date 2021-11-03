@@ -303,6 +303,10 @@ button {
   color: #fff;
   background-color: #4a154b;
 }
+.button.button-slack:hover,
+.button.button-slack:focus {
+  filter: brightness(90%)
+}
 
 /* Stack Overflow */
 .button.button-stackoverflow {
@@ -435,12 +439,25 @@ button {
   background-color: #000000;
 }
 
+/* WeChat */
+.button.button-wechat {
+  color: #ffffff;
+  background-color: #2db842;
+}
+.button.button-wechat:hover,
+.button.button-wechat:focus {
+  filter: brightness(90%);
+}
+
 /* Venmo */
 .button.button-venmo {
   color: #ffffff;
   background-color: #3d95ce;
 }
-
+.button.button-venmo:hover,
+.button.button-venmo:focus {
+  filter: brightness(90%);
+}
 /* Status */
 .button.button-status {
   color: #000;
@@ -531,4 +548,14 @@ button {
 .button.button-500px {
   color: #000;
   background-color: #fff
+}
+
+/* ApplePay */
+.button.button-applepay {
+  color: #ffffff;
+  background-color: #000000;
+}
+.button.button-applepay:hover,
+.button.button-applepay:focus {
+  filter: brightness(90%);
 }
