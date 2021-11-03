@@ -80,6 +80,9 @@ import dockerhubLogo from '../../icons/docker.svg';
 import veroLogo from '../../icons/vero.svg';
 import myAnimeListLogo from '../../icons/myanimelist.svg';
 import fiveHundredPXLogo from '../../icons/500px.svg';
+import wechatLogo from '../../icons/wechat.svg';
+import applepayLogo from '../../icons/applepay.svg';
+
 
 function Home(props) {
   let order = [];
@@ -704,6 +707,16 @@ function Home(props) {
                   logo={youtubemusicLogo}
                   order={buttonOrder('YOUTUBE_MUSIC')}
                 />
+              )
+              }
+              {runtimeConfig.WECHAT && (
+                <Button
+                  name="wechat"
+                  href={runtimeConfig.WECHAT}
+                  displayName="WeChat"
+                  logo={wechatLogo}
+                  order={buttonOrder('WECHAT')}
+                />
               )}
               {runtimeConfig.VENMO && (
                 <Button
@@ -714,142 +727,183 @@ function Home(props) {
                   order={buttonOrder('VENMO')}
                 />
               )}
-              {runtimeConfig.STATUS && (
-                <Button
-                  name="status"
-                  href={runtimeConfig.STATUS}
-                  displayName="Status"
-                  logo={statusLogo}
-                  order={buttonOrder('STATUS')}
-                />
-              )}
-              {runtimeConfig.MATRIX && (
-                <Button
-                  name="matrix"
-                  href={runtimeConfig.MATRIX}
-                  displayName="[matrix]"
-                  logo={matrixLogo}
-                  order={buttonOrder('MATRIX')}
-                />
-              )}
-              {runtimeConfig.ANILIST && (
-                <Button
-                  name="anilist"
-                  href={runtimeConfig.ANILIST}
-                  displayName="AniList"
-                  logo={anilistLogo}
-                  order={buttonOrder('ANILIST')}
-                />
-              )}
-              {runtimeConfig.GITBUCKET && (
-                <Button
-                  name="gitbucket"
-                  href={runtimeConfig.GITBUCKET}
-                  displayName="GitBucket"
-                  logo={gitbucketLogo}
-                  order={buttonOrder('GITBUCKET')}
-                />
-              )}
-              {runtimeConfig.SHAZAM && (
-                <Button
-                  name="shazam"
-                  href={runtimeConfig.SHAZAM}
-                  displayName="Shazam"
-                  logo={shazamLogo}
-                  order={buttonOrder('SHAZAM')}
-                />
-              )}
-              {runtimeConfig.FLICKR && (
-                <Button
-                  name="flickr"
-                  href={runtimeConfig.FLICKR}
-                  displayName="Flickr"
-                  logo={flickrLogo}
-                  order={buttonOrder('FLICKR')}
-                />
-              )}
-              {runtimeConfig.TPDB && (
-                <Button
-                  name="tpdb"
-                  href={runtimeConfig.TPDB}
-                  displayName="The Poster Database"
-                  logo={tpdbLogo}
-                  order={buttonOrder('TPDB')}
-                />
-              )}
-              {runtimeConfig.OSU && (
-                <Button
-                  name="osu"
-                  href={runtimeConfig.OSU}
-                  displayName="osu!"
-                  logo={osuLogo}
-                  order={buttonOrder('OSU')}
-                />
-              )}
-              {runtimeConfig.KAKAOTALK && (
-                <Button
-                  name="kakaoTalk"
-                  href={runtimeConfig.KAKAOTALK}
-                  displayName="KakaoTalk"
-                  logo={kakaoLogo}
-                  order={buttonOrder('KAKAOTALK')}
-                />
-              )}
-              {runtimeConfig.LINE && (
-                <Button
-                  name="lineMessenger"
-                  href={runtimeConfig.LINE}
-                  displayName="Line Messenger"
-                  logo={lineLogo}
-                  order={buttonOrder('LINE')}
-                />
-              )}
-              {runtimeConfig.DESIGNBYHUMANS && (
-                <Button
-                  name="designByHumans"
-                  href={runtimeConfig.DESIGNBYHUMANS}
-                  displayName="Design By Hümans"
-                  logo={designByHumansLogo}
-                  order={buttonOrder('DESIGNBYHUMANS')}
-                />
-              )}
-              {runtimeConfig.DOCKERHUB && (
-                <Button
-                  name="dockerhub"
-                  href={runtimeConfig.DOCKERHUB}
-                  displayName="Dockerhub"
-                  logo={dockerhubLogo}
-                  order={buttonOrder('DOCKERHUB')}
-                />
-              )}
-              {runtimeConfig.VERO && (
-                <Button
-                  name="vero"
-                  href={runtimeConfig.VERO}
-                  displayName="VERO"
-                  logo={veroLogo}
-                  order={buttonOrder('VERO')}
-                />
-              )}
-              {runtimeConfig.MYANIMELIST && (
-                <Button
-                  name="myAnimeList"
-                  href={runtimeConfig.MYANIMELIST}
-                  displayName="MyAnimeList"
-                  logo={myAnimeListLogo}
-                  order={buttonOrder('MYANIMELIST')}
-                />
-              )}
-              {runtimeConfig.FIVEHUNDREDPX && (
-                <Button
-                  name="500px"
-                  href={runtimeConfig.FIVEHUNDREDPX}
-                  displayName="500px"
-                  logo={fiveHundredPXLogo}
-                  order={buttonOrder('FIVEHUNDREDPX')}
-                />
-              )}
-            </Sort>
+              {
+                runtimeConfig.STATUS && (
+                  <Button
+                    name="status"
+                    href={runtimeConfig.STATUS}
+                    displayName="Status"
+                    logo={statusLogo}
+                    order={buttonOrder('STATUS')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.MATRIX && (
+                  <Button
+                    name="matrix"
+                    href={runtimeConfig.MATRIX}
+                    displayName="[matrix]"
+                    logo={matrixLogo}
+                    order={buttonOrder('MATRIX')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.ANILIST && (
+                  <Button
+                    name="anilist"
+                    href={runtimeConfig.ANILIST}
+                    displayName="AniList"
+                    logo={anilistLogo}
+                    order={buttonOrder('ANILIST')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.GITBUCKET && (
+                  <Button
+                    name="gitbucket"
+                    href={runtimeConfig.GITBUCKET}
+                    displayName="GitBucket"
+                    logo={gitbucketLogo}
+                    order={buttonOrder('GITBUCKET')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.SHAZAM && (
+                  <Button
+                    name="shazam"
+                    href={runtimeConfig.SHAZAM}
+                    displayName="Shazam"
+                    logo={shazamLogo}
+                    order={buttonOrder('SHAZAM')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.FLICKR && (
+                  <Button
+                    name="flickr"
+                    href={runtimeConfig.FLICKR}
+                    displayName="Flickr"
+                    logo={flickrLogo}
+                    order={buttonOrder('FLICKR')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.TPDB && (
+                  <Button
+                    name="tpdb"
+                    href={runtimeConfig.TPDB}
+                    displayName="The Poster Database"
+                    logo={tpdbLogo}
+                    order={buttonOrder('TPDB')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.OSU && (
+                  <Button
+                    name="osu"
+                    href={runtimeConfig.OSU}
+                    displayName="osu!"
+                    logo={osuLogo}
+                    order={buttonOrder('OSU')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.KAKAOTALK && (
+                  <Button
+                    name="kakaoTalk"
+                    href={runtimeConfig.KAKAOTALK}
+                    displayName="KakaoTalk"
+                    logo={kakaoLogo}
+                    order={buttonOrder('KAKAOTALK')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.LINE && (
+                  <Button
+                    name="lineMessenger"
+                    href={runtimeConfig.LINE}
+                    displayName="Line Messenger"
+                    logo={lineLogo}
+                    order={buttonOrder('LINE')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.DESIGNBYHUMANS && (
+                  <Button
+                    name="designByHumans"
+                    href={runtimeConfig.DESIGNBYHUMANS}
+                    displayName="Design By Hümans"
+                    logo={designByHumansLogo}
+                    order={buttonOrder('DESIGNBYHUMANS')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.DOCKERHUB && (
+                  <Button
+                    name="dockerhub"
+                    href={runtimeConfig.DOCKERHUB}
+                    displayName="Dockerhub"
+                    logo={dockerhubLogo}
+                    order={buttonOrder('DOCKERHUB')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.VERO && (
+                  <Button
+                    name="vero"
+                    href={runtimeConfig.VERO}
+                    displayName="VERO"
+                    logo={veroLogo}
+                    order={buttonOrder('VERO')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.MYANIMELIST && (
+                  <Button
+                    name="myAnimeList"
+                    href={runtimeConfig.MYANIMELIST}
+                    displayName="MyAnimeList"
+                    logo={myAnimeListLogo}
+                    order={buttonOrder('MYANIMELIST')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.FIVEHUNDREDPX && (
+                  <Button
+                    name="500px"
+                    href={runtimeConfig.FIVEHUNDREDPX}
+                    displayName="500px"
+                    logo={fiveHundredPXLogo}
+                    order={buttonOrder('FIVEHUNDREDPX')}
+                  />
+                )
+              }
+              {
+                runtimeConfig.APPLEPAY && (
+                  <Button
+                    name="applepay"
+                    href={runtimeConfig.APPLEPAY}
+                    displayName="Apple Pay"
+                    logo={applePayLogo}
+                    order={buttonOrder('APPLEPAY')}
+                  />
+                )
+              }
+            </Sort >
             <div>
               <p className="footer">
                 {runtimeConfig.FOOTER}
@@ -864,9 +918,9 @@ function Home(props) {
                   )}
               </p>
             </div>
-          </div>
-        </div>
-      </div>
+          </div >
+        </div >
+      </div >
     </>
   );
 }
