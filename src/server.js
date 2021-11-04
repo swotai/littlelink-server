@@ -14,8 +14,8 @@ const cssLinksFromAssets = (assets, entrypoint) => {
   return assets[entrypoint]
     ? assets[entrypoint].css
       ? assets[entrypoint].css
-        .map(asset => `<link rel="stylesheet" href="${asset}">`)
-        .join('')
+          .map(asset => `<link rel="stylesheet" href="${asset}">`)
+          .join('')
       : ''
     : '';
 };
@@ -24,8 +24,8 @@ const jsScriptTagsFromAssets = (assets, entrypoint, extra = '') => {
   return assets[entrypoint]
     ? assets[entrypoint].js
       ? assets[entrypoint].js
-        .map(asset => `<script src="${asset}"${extra}></script>`)
-        .join('')
+          .map(asset => `<script src="${asset}"${extra}></script>`)
+          .join('')
       : ''
     : '';
 };
@@ -41,7 +41,7 @@ if (process.env.NODE_ENV === 'production') {
 server
   .disable('x-powered-by')
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
-  .get('/links', (req, res) => {
+  .get('/', (req, res) => {
     const context = {};
     const markup = renderToString(
       <StaticRouter context={context} location={req.url}>
@@ -61,7 +61,8 @@ server
         <title >${runtimeConfig.META_TITLE}</title>
         <meta name="description" content="${runtimeConfig.META_DESCRIPTION}">
         <meta name="author" content="${runtimeConfig.META_AUTHOR}">
-        <meta name="robots" content="${runtimeConfig.META_INDEX_STATUS || 'noindex'
+        <meta name="robots" content="${
+          runtimeConfig.META_INDEX_STATUS || 'noindex'
         }">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&amp;display=swap" rel="stylesheet">
@@ -70,8 +71,9 @@ server
         <link rel="stylesheet" href="css/brands.css">
         ${cssLinksFromAssets(assets, 'client')}
         <link rel="icon" type="image/png" href="${runtimeConfig.FAVICON_URL}">
-        ${runtimeConfig.GA_TRACKING_ID
-          ? `
+        ${
+          runtimeConfig.GA_TRACKING_ID
+            ? `
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=${runtimeConfig.GA_TRACKING_ID}"></script>
             <script>
@@ -81,14 +83,15 @@ server
 
         gtag('config', '${runtimeConfig.GA_TRACKING_ID}');
       </script>`
-          : ''
+            : ''
         }
-        ${runtimeConfig.UMAMI_WEBSITE_ID && runtimeConfig.UMAMI_APP_URL
-          ? `
+        ${
+          runtimeConfig.UMAMI_WEBSITE_ID && runtimeConfig.UMAMI_APP_URL
+            ? `
             <!-- Umami Analytics -->
             <script async defer data-website-id="${runtimeConfig.UMAMI_WEBSITE_ID}" src="${runtimeConfig.UMAMI_APP_URL}/umami.js">
             </script>`
-          : ''
+            : ''
         }
 
     </head>
