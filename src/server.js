@@ -78,8 +78,13 @@ server
         <title >${runtimeConfig.META_TITLE}</title>
         <meta name="description" content="${runtimeConfig.META_DESCRIPTION}">
         <meta name="author" content="${runtimeConfig.META_AUTHOR}">
+<<<<<<< HEAD
         <meta name="keywords" content="${runtimeConfig.META_KEYWORDS}">
         <meta name="robots" content="${runtimeConfig.META_INDEX_STATUS || 'noindex'
+=======
+        <meta name="robots" content="${
+          runtimeConfig.META_INDEX_STATUS || 'noindex'
+>>>>>>> 50be929 (Revert "Move the base level to /links")
         }">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         ${runtimeConfig.OG_SITE_NAME
