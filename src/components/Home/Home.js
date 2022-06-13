@@ -45,7 +45,14 @@ import slackLogo from '../../icons/slack.svg';
 import wechatLogo from '../../icons/wechat.svg';
 import venmoLogo from '../../icons/venmo.svg';
 import applepayLogo from '../../icons/applepay.svg';
-
+import stackoverflowLogo from '../../icons/stackoverflow.svg';
+import lastfmLogo from '../../icons/lastfm.svg';
+import giteaLogo from '../../icons/gitea.svg';
+import polyworkLogo from '../../icons/polywork.svg';
+import signalLogo from '../../icons/signal.svg';
+import untappdLogo from '../../icons/untappd.svg';
+import instantGamingLogo from '../../icons/instantgaming.svg';
+import ghostLogo from '../../icons/ghost.svg';
 
 function Home(props) {
   let order = [];
@@ -55,6 +62,49 @@ function Home(props) {
 
   const buttonOrder = button => {
     return order.indexOf(button);
+  };
+
+  const renderCustomButtons = () => {
+    const names = runtimeConfig.CUSTOM_BUTTON_NAME?.split(',');
+    const urls = runtimeConfig.CUSTOM_BUTTON_URL?.split(',');
+    const altTexts = runtimeConfig.CUSTOM_BUTTON_ALT_TEXT?.split(',');
+    const texts = runtimeConfig.CUSTOM_BUTTON_TEXT?.split(',');
+    const buttonColors = runtimeConfig.CUSTOM_BUTTON_COLOR?.split(',');
+    const textColors = runtimeConfig.CUSTOM_BUTTON_TEXT_COLOR?.split(',');
+    const icons = runtimeConfig.CUSTOM_BUTTON_ICON?.split(',');
+    // have to clean up some of the strings to standardize for analytics
+
+    return texts.map((t, i) => {
+      // do not try to render button unless it has all of the required props
+      return (
+        <div key={i} order={buttonOrder(names[i]?.trim())}>
+          {names &&
+            names[i] &&
+            urls &&
+            urls[i] &&
+            texts &&
+            texts[i] &&
+            buttonColors &&
+            buttonColors[i] &&
+            textColors &&
+            textColors[i] &&
+            altTexts &&
+            altTexts[i] && (
+              <Button
+                name={names[i]?.trim().toLowerCase()}
+                href={urls[i]?.trim()}
+                displayName={texts[i]?.trim()}
+                styles={{
+                  backgroundColor: buttonColors[i]?.trim(),
+                  color: textColors[i]?.trim(),
+                }}
+                alt={altTexts[i]?.trim()}
+                icon={icons && icons[i]?.trim()}
+              />
+            )}
+        </div>
+      );
+    });
   };
 
   return (
@@ -70,6 +120,7 @@ function Home(props) {
             <h1>{`${runtimeConfig.NAME}`}</h1>
             <p>{runtimeConfig.BIO}</p>
             <Sort>
+              {runtimeConfig.CUSTOM_BUTTON_TEXT && renderCustomButtons()}
               {runtimeConfig.YOUTUBE && (
                 <Button
                   name="youtube"
@@ -453,6 +504,78 @@ function Home(props) {
                   displayName="Apple Pay"
                   logo={applepayLogo}
                   order={buttonOrder('APPLEPAY')}
+                />
+              )}
+              {runtimeConfig.STACKOVERFLOW && (
+                <Button
+                  name="stackoverflow"
+                  href={runtimeConfig.STACKOVERFLOW}
+                  displayName="stack"
+                  logo={stackoverflowLogo}
+                  order={buttonOrder('STACKOVERFLOW')}
+                />
+              )}
+              {runtimeConfig.LASTFM && (
+                <Button
+                  name="lastfm"
+                  href={runtimeConfig.LASTFM}
+                  displayName="Last.fm"
+                  logo={lastfmLogo}
+                  order={buttonOrder('LASTFM')}
+                />
+              )}
+              {runtimeConfig.GITEA && (
+                <Button
+                  name="gitea"
+                  href={runtimeConfig.GITEA}
+                  displayName="Gitea"
+                  logo={giteaLogo}
+                  order={buttonOrder('GITEA')}
+                />
+              )}
+              {runtimeConfig.POLYWORK && (
+                <Button
+                  name="polywork"
+                  href={runtimeConfig.POLYWORK}
+                  displayName="Polywork"
+                  logo={polyworkLogo}
+                  order={buttonOrder('POLYWORK')}
+                />
+              )}
+              {runtimeConfig.SIGNAL && (
+                <Button
+                  name="signal"
+                  href={runtimeConfig.SIGNAL}
+                  displayName="Signal"
+                  logo={signalLogo}
+                  order={buttonOrder('SIGNAL')}
+                />
+              )}
+              {runtimeConfig.UNTAPPD && (
+                <Button
+                  name="untappd"
+                  href={runtimeConfig.UNTAPPD}
+                  displayName="Untappd"
+                  logo={untappdLogo}
+                  order={buttonOrder('UNTAPPD')}
+                />
+              )}
+              {runtimeConfig.INSTANTGAMING && (
+                <Button
+                  name="instantgaming"
+                  href={runtimeConfig.INSTANTGAMING}
+                  displayName="Instant Gaming"
+                  logo={instantGamingLogo}
+                  order={buttonOrder('INSTANTGAMING')}
+                />
+              )}
+              {runtimeConfig.GHOST && (
+                <Button
+                  name="ghost"
+                  href={runtimeConfig.GHOST}
+                  displayName="ghost"
+                  logo={ghostLogo}
+                  order={buttonOrder('GHOST')}
                 />
               )}
             </Sort>

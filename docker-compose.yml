@@ -14,6 +14,7 @@ services:
       - META_TITLE=Techno Tim
       - META_DESCRIPTION=Techno Tim Link page
       - META_AUTHOR=Techno Tim
+      - META_KEYWORDS=HomeLab, CSS, HTML, Engineering
       - LANG=en
       - META_INDEX_STATUS=all
       - THEME=Dark
@@ -29,7 +30,7 @@ services:
       - INSTAGRAM=https://www.instagram.com/techno.tim
       - YOUTUBE=https://www.youtube.com/channel/UCOk-gHyjcWZNj3Br4oxwh0A
       - TWITCH=https://www.twitch.tv/technotim/
-      - DISCORD=https://discord.gg/DJKexrJ
+      - DISCORD=https://l.technotim.live/discord
       - TIKTOK=https://www.tiktok.com/@technotim
       - KIT=https://kit.co/TechnoTim
       - FACEBOOK=https://facebook.com
@@ -45,7 +46,7 @@ services:
       - EMAIL_TEXT=Email Me!
       - EMAIL_ALT=you@example.com
       - EMAIL_ALT_TEXT=Email me!
-      - SOUND_CLOUD=https://souncloud.com
+      - SOUND_CLOUD=https://soundcloud.com
       - FIGMA=https://figma.com
       - TELEGRAM=https://telegram.org/
       - TUMBLR=https://www.tumblr.com/
@@ -68,7 +69,25 @@ services:
       - BUTTON_ORDER=YOUTUBE,TWITCH,TWITTER,GITHUB,INSTAGRAM,DISCORD,FACEBOOK,TIKTOK,KIT,PATREON
       - PAYPAL=https://www.paypal.me/user
       - SLACK=https://slack.com/
-
+      - STACKOVERFLOW=https://stackoverflow.com/
+      - LASTFM=https://last.fm/
+      - GITEA=https://gitea.io/
+      - POLYWORK=https://www.polywork.com/
+      - SIGNAL=https://signal.org/
+      - UNTAPPD=https://untappd.com/
+      - BUTTON_TARGET=_blank
+      - INSTANTGAMING=https://www.instant-gaming.com/
+      - OG_SITE_NAME=Techno Tim Live (OG)
+      - OG_TITLE=Techno Tim (OG)
+      - OG_DESCRIPTION=Techno Tim Link page (OG)
+      - OG_URL=https://technotim.live/
+      - OG_IMAGE=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_400x400.jpg
+      - OG_IMAGE_WIDTH=400
+      - OG_IMAGE_HEIGHT=400
+      - TWITTER_CARD=summary_large_image
+      - TWITTER_IMAGE=https://pbs.twimg.com/profile_images/1286144221217316864/qIAsKOpB_400x400.jpg
+      - TWITTER_SITE=@TechnoTimLive
+      - TWITTER_CREATOR=@TechnoTimLive
     ports:
       - 8080:3000
     restart: unless-stopped
